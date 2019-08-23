@@ -1,0 +1,33 @@
+package examen1;
+import java.util.Scanner;
+
+public class Examen1 {
+
+    
+    public static void main(String[] args) {
+      int a[]=new int [4]; 
+      int NO[]=new int [4];
+      int aux;
+      Scanner sc = new Scanner(System.in);
+        System.out.println("Bienvenido");
+        System.out.println("Ingrese carne y nota");
+        for(int i=0; i<4; i++){
+            System.out.print("Carne: ");
+            a[i]=sc.nextInt();
+            System.out.println("Nota: ");
+            NO[i]=sc.nextInt();
+        }
+        for(int i=0; i<(4-1); i++){
+            for (int k=0; k<(4-1); k++){
+                if(NO[k]>NO[k+1]){
+                    aux = NO[k];
+                    NO[k] = NO[k+1];
+                    NO[k+1] = aux;
+                }
+            }
+        }
+        for (int t=0; t<4; t++){
+            System.out.println((t+1)+" - - "+NO[t]);
+        }
+    }
+}
